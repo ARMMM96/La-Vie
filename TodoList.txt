@@ -28,13 +28,24 @@ ________________
 				✓- Book marks [Urls....]
 		}
 
-	// Actions on User Model 
-		- Sign up (Create account) throw regular form or any third party such as (google - facebook)
-		- Login (Read data and validate and create token)
-		- Forgot password (Will send verfication code to his email to allow him to update the password)
-		- Logout (will update user data and remove tokens array);
-		- Get single to get User data to render it into his Personal profile
 
+
+
+	// Actions on User Model 
+		> Route added
+		- Sign up (Create account) throw regular form or any third party such as (google - facebook)
+		> Route added
+		- Login (Read data and validate and create token)
+		> Route added
+		- Forgot password (Will send verfication code to his email to allow him to update the password)
+		> Route added
+		- Logout (will update user data and remove tokens array);
+		> Route added
+		- Get single to get User data to render it into his Personal profile
+		> Route added
+		- Edit my profile action
+		> Route added
+		- Delete account action
 	________________________________________________________________________________________________________________
 
 	user must be loggedin to be a partner 
