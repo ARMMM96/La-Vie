@@ -1,0 +1,192 @@
+La Vie Todo List
+________________
+
+	// User data
+	- Users Schema: {
+
+				- First Name (required)
+				- Last Name  (required)	
+				- Email 	 (required)
+				- Password   (required) [Capital Letter Small Letter Special character and a number]
+				- Phone number 
+				- Date of birth
+				- Gender
+				- Profile picture
+				- Addresses
+				- Qualification: ref: "myQualification",
+				- role:  ref: "appRoles", [admin , user, partner]
+				- Book marks [Urls....]
+		}
+
+	// Actions on User Model 
+	Sign up (Create account) throw regular form or any third party such as (google - facebook)
+	Login (Read data and validate and create token)
+	Forgot password (Will send verfication code to his email to allow him to update the password)
+	Logout (will update user data and remove tokens array);
+	Get single to get User data to render it into his Personal profile
+
+	________________________________________________________________________________________________________________
+
+		user must be loggedin to be a partner 
+
+	Partner Schema
+		{
+			Store name: string required
+			No. of Branches: number required
+			Store type: []
+			Restaurant Address
+			Email address:
+			Mobile number:
+			Website:
+			Social media:
+			Contact role: [Owner, Co-owner, Manager, Employee]
+	}
+
+	// Actions	
+		// Convert to partner     				<<<<<<< I have no i dea how it will function
+		// Return to regular user 				<<<<<< I have no i dea how it will function
+		// Create account as partner
+		// Update account data
+		// Delete account
+
+	
+________________________________________________________________________________________________________________
+
+		Qualification Schema
+		{
+			- Level: [beginner-advanced-professional]
+			- Rewards [
+						{
+							rewordName: String
+							rewardScore: number
+						}
+					]
+			- TotalRewords: totlNumber of rewords Scoor;
+		}
+
+
+	
+________________________________________________________________________________________________________________
+
+product Schema{
+
+	- name
+	- description
+	- image
+	- images[]
+	- brand
+	- price
+	- category:  ref Category
+	- countInStock
+	- Review: ref products reviews
+}
+
+
+// Actions 
+
+		- Create new product
+		- Update product
+		- get products
+		- remove Product
+________________________________________________________________________________________________________________
+products review schema {
+
+		title: string
+		conent: text
+		reating: number from 1 to 10
+		product: ref to the proudct by id 
+		user: ref user id 
+
+}
+
+	// Actions	
+		create review 
+		update  reivew
+		get reviews for a product
+		delete review 
+
+
+________________________________________________________________________________________________________________
+
+app Roles Schema:{type: String, unique, required}
+
+________________________________________________________________________________________________________________
+
+routes  Schema : { 
+
+			 - routeName:String, unique, required
+			 - roles: ref: [roels id's]
+			
+			}
+
+
+	// Actions 
+			Create rule
+			updte rule
+			get rule
+			delete rule
+
+
+________________________________________________________________________________________________________________
+
+Blogs Schema
+{
+	title:
+	content:
+	publishDate:
+	rete:[{
+		starsNumber: 
+		userId: ref:User
+	}]
+	AvergeRate:avergeValue of useres rate array
+	Comments: [
+		{
+			user: 	userId: ref:User
+			content:
+		}
+	]
+
+
+}	
+
+
+// Actions
+	// Insert Rate value 
+	// get reates
+	// delete rate
+	// add Comments
+	// Edit comment or update comment
+	// delete Comments
+
+________________________________________________________________________________________________________________
+
+Quizzes Schema:
+	{
+		question:
+		answers: [array]
+		correct answer: index value of correct answer in the array of questions
+		question-level: [beginner-advanced-professional]
+		rewardScore: number 
+	}
+
+
+// Actions
+		// insert question
+		// update question
+		// get questions based on the user level
+		// delete question
+
+
+
+
+________________________________________________________________________________________________________________
+
+
+// Learn more  & contact us available route for all users
+
+________________________________________________________________________________________________________________
+
+
+	- Implementing authentication middleware
+
+	- Implementing authorization middleware
