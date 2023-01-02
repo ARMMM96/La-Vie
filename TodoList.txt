@@ -14,26 +14,26 @@ ________________
 	// User data
 	- Users Schema: {
 
-				- First Name (required)
-				- Last Name  (required)	
-				- Email 	 (required)
-				- Password   (required) [Capital Letter Small Letter Special character and a number]
-				- Phone number 
-				- Date of birth
-				- Gender
-				- Profile picture
-				- Addresses
+				✓- First Name (required)										
+				✓- Last Name  (required)					
+				✓- Email 	 (required)					
+				✓- Password   (required) [Capital Letter Small Letter Special character and a number]
+				✓- Phone number 
+				✓- Date of birth
+				✓- Gender
+				✓- Profile picture
+				✓- Addresses
 				- Qualification: ref: "myQualification",
 				- role:  ref: "appRoles", [admin , user, partner]
-				- Book marks [Urls....]
+				✓- Book marks [Urls....]
 		}
 
 	// Actions on User Model 
-	Sign up (Create account) throw regular form or any third party such as (google - facebook)
-	Login (Read data and validate and create token)
-	Forgot password (Will send verfication code to his email to allow him to update the password)
-	Logout (will update user data and remove tokens array);
-	Get single to get User data to render it into his Personal profile
+		- Sign up (Create account) throw regular form or any third party such as (google - facebook)
+		- Login (Read data and validate and create token)
+		- Forgot password (Will send verfication code to his email to allow him to update the password)
+		- Logout (will update user data and remove tokens array);
+		- Get single to get User data to render it into his Personal profile
 
 	________________________________________________________________________________________________________________
 
