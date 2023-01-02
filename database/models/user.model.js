@@ -23,6 +23,22 @@ const userSchema = Schema({
             }
         }
     },
+    password: {
+        type: String,
+        trim: true,
+        required: true,
+        validate(value) {
+            const isValidpassword = validator.isStrongPassword(value, {
+                minLength: 8,
+                minLowercase: 1, minUppercase: 1,
+                minNumbers: 1, minSymbols: 1,
+                returnScore: false,
+            });
+            if (!isValidpassword) {
+                throw new Error("invalid password format")
+            }
+        }
+    },
     dateOfBirth: {
         type: String,
     },
@@ -42,7 +58,7 @@ const userSchema = Schema({
     addresses: [
         {
             address: {
-                addrType: { type: String , require: true},
+                addrType: { type: String, require: true },
                 addrDetails: { type: String }
             }
         }
