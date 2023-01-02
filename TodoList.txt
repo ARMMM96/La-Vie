@@ -3,8 +3,8 @@ La Vie Todo List
 
 
 	- Installing packages 			✓  DONE 
-	- Initialize express app		
-	- Adding folder structure		
+	- Initialize express app		✓  DONE 
+	- Adding folder structure		✓  DONE
 	- Connect to Mongo DB 			
 	
 
