@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const validator = require("validator")
-const { Schema } = Mongoose;
+const { Schema } = mongoose;
 
 const userSchema = Schema({
     fristName: {

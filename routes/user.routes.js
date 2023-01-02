@@ -1,5 +1,7 @@
 const router = require("express").Router()
 
+const User = require("../app/controllers/user.contoller")
+
 // Sign Up account
 router.post("/signup", (req, res) => {
     res.send("Singup Route")
