@@ -1,4 +1,14 @@
 La Vie Todo List
+
+
+
+	- Installing packages 			✓  DONE 
+	- Initialize express app		
+	- Adding folder structure		
+	- Connect to Mongo DB 			
+	
+
+
 ________________
 
 	// User data
@@ -27,7 +37,7 @@ ________________
 
 	________________________________________________________________________________________________________________
 
-		user must be loggedin to be a partner 
+	user must be loggedin to be a partner 
 
 	Partner Schema
 		{
