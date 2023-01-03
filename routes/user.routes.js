@@ -6,9 +6,7 @@ const User = require("../app/controllers/user.contoller")
 router.post("/signup", User.signUp)
 
 // Login
-router.post("/login", (req, res) => {
-    res.send("Login Route")
-})
+router.post("/login", User.login)
 
 // Logout
 router.post("/logout", (req, res) => {
