@@ -72,8 +72,10 @@ const userSchema = Schema({
     image: {
         type: String,
         trim: true,
-    }
-
+    },
+    tokens: [{
+        token: { type: String, required: true }
+    }]
 })
 
 

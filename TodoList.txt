@@ -33,6 +33,7 @@ ________________
 
 	// Actions on User Model 
 		> Route added
+		> Method Implemented
 		- Sign up (Create account) throw regular form or any third party such as (google - facebook)
 		> Route added
 		- Login (Read data and validate and create token)
