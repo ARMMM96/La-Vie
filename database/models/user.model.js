@@ -88,6 +88,16 @@ userSchema.pre("save", async function () {
 })
 
 
+userSchema.statics.loginUser = async (email, password) => {
+    const userData = await User.findOne({ email })
+    if (!userData) throw new Error("invalid email")
+    const validatePassword = await bcryptjs.compare(password, userData.password)
+    if (!validatePassword) throw new Error("invalid password")
+    return userData
+}
+
+
+
 userSchema.methods.generateToken = async function () {
     const userData = this
     console.log("test ", process.env.tokenPass)
