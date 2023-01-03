@@ -7,10 +7,10 @@ class User {
         try {
             const userData = new userModel(req.body)
             await userData.save()
-            myHelper.resHandler(res, 200, true, userData, "user added successfully")
+            resHelper.resHandler(res, 200, true, userData, "user added successfully")
         }
         catch (e) {
-            myHelper.resHandler(res, 500, false, e, e.message)
+            resHelper.resHandler(res, 500, false, e, e.message)
         }
     }
 }
