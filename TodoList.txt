@@ -21,7 +21,7 @@ ________________
 				✓- Phone number 
 				✓- Date of birth
 				✓- Gender
-				✓- Profile picture
+				- Profile picture
 				✓- Addresses
 				- Qualification: ref: "myQualification",
 				- role:  ref: "appRoles", [admin , user, partner]
@@ -163,10 +163,11 @@ routes  Schema : { 														✓  DONE
 
 
 	// Actions 
-			Create route
-			updte route
-			get route
-			delete route
+			Create route	✓  DONE 
+			updte route		✓  DONE 
+			get route		✓  DONE 
+			get routes		✓  DONE 
+			delete route	✓  DONE 
 
 
 ________________________________________________________________________________________________________________
@@ -231,4 +232,4 @@ ________________________________________________________________________________
 
 	- Implementing authentication middleware		✓  DONE 
 
-	- Implementing authorization middleware
+	- Implementing authorization middleware			✓  DONE 

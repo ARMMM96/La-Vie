@@ -1,6 +1,7 @@
 const router = require("express").Router()
 const User = require("../app/controllers/user.contoller")
 const { authentication } = require("../app/middlewares/authentication.middleware")
+const { authorization } = require("../app/middlewares/authorization.middleware")
 const { loginRateLimiter } = require("../app/middlewares/loginRateLimiter.middleware")
 const { signUpRateLimiter } = require("../app/middlewares/singUpRateLimiter.middleware")
 const { updateRateLimiter } = require("../app/middlewares/updateRateLimiter.middleware")
@@ -21,14 +22,14 @@ router.post("/resetPassword", (req, res) => {
 })
 
 // My Profile 
-router.get("/me", authentication, User.myProfile)
+router.get("/me", [authentication, authorization], User.myProfile)
 
 
 // Update My profile 
-router.patch("/update/", [authentication, updateRateLimiter], User.updateProfile)
+router.patch("/update/", [authentication, authorization, updateRateLimiter], User.updateProfile)
 
 // Delete user 
-router.delete("/delete", authentication, User.deleteAccount)
+router.delete("/delete", [authentication, authorization], User.deleteAccount)
 
 
 module.exports = router
