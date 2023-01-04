@@ -50,6 +50,17 @@ class User {
         }
 
     }
+
+    static updateProfile = async (req, res) => {
+        try {
+            const user = await userModel.findByIdAndUpdate(req.user._id, req.body, { new: true })
+            resHelper.resHandler(res, 200, true, user, "updated")
+        }
+        catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+        }
+
+    }
 }
 
 

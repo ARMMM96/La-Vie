@@ -24,9 +24,7 @@ router.get("/me", authentication, User.myProfile)
 
 
 // Update My profile 
-router.patch("/update/:id", (req, res) => {
-    res.send("Update My profile Route")
-})
+router.patch("/update/",authentication, User.updateProfile)
 
 // Delete user 
 router.delete("/delete/:id", (req, res) => {
