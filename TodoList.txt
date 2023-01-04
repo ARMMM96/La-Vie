@@ -149,10 +149,11 @@ app Roles Schema:{type: String, unique, required}    ✓  DONE
 
 
 	// Actions 
-			Create Role
-			updte Role
-			get Role
-			delete Role
+			Create Role	 ✓  DONE 
+			updte Role	 ✓  DONE 
+			get Role	 ✓  DONE 
+			get Roles	 ✓  DONE 
+			delete Role	 ✓  DONE 
 ________________________________________________________________________________________________________________
 
 routes  Schema : { 

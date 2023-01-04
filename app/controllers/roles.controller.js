@@ -56,6 +56,20 @@ class Rolse {
             resHelper.resHandler(res, 500, false, e, e.message)
         }
     }
+    static getRoles = async (req, res) => {
+        try {
+            const rolesData = await rolesModel.find()
+            if (!rolesData) {
+                resHelper.resHandler(res, 404, false, null, "No Rules created Yet")
+            } else {
+                resHelper.resHandler(res, 200, true, rolesData, "Rule Deleted successfully")
+            }
+
+        }
+        catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
 
 
 

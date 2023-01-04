@@ -1,5 +1,6 @@
 const router = require("express").Router()
 const Rolse = require("../app/controllers/roles.controller")
+const Roles = require("../database/models/roles.model")
 
 
 
@@ -10,9 +11,7 @@ router.patch("/update", Rolse.update)
 
 router.get("/get", Rolse.singleRole)
 
-router.get("/all", (req, res) => {
-    res.send("All Rules data")
-})
+router.get("/all", Rolse.getRoles)
 
 router.delete("/delete", Rolse.delete)
 
