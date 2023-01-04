@@ -1,7 +1,7 @@
 const rolesModel = require("../../database/models/roles.model")
 const resHelper = require("../helpers/resHelper")
 
-class Rules {
+class Rolse {
 
     static create = async (req, res) => {
         try {
@@ -43,6 +43,8 @@ class Rules {
     }
 
 
+
+
 }
 
-module.exports = Rules
+module.exports = Rolse

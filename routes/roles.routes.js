@@ -1,18 +1,22 @@
 const router = require("express").Router()
-const Rules = require("../app/controllers/roles.controller")
+const Rolse = require("../app/controllers/roles.controller")
 
 
 
-router.post("/create", Rules.create)
+router.post("/create", Rolse.create)
 
-router.patch("/update", Rules.update)
+router.patch("/update", Rolse.update)
 
 
 router.get("/get", (req, res) => {
     res.send("rule data")
 })
 
-router.delete("/delete", Rules.delete)
+router.get("/all", (req, res) => {
+    res.send("All Rules data")
+})
+
+router.delete("/delete", Rolse.delete)
 
 
 module.exports = router
