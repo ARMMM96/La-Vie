@@ -3,6 +3,7 @@ const User = require("../app/controllers/user.contoller")
 const { authentication } = require("../app/middlewares/authentication.middleware")
 const { loginRateLimiter } = require("../app/middlewares/loginRateLimiter.middleware")
 const { signUpRateLimiter } = require("../app/middlewares/singUpRateLimiter.middleware")
+const { updateRateLimiter } = require("../app/middlewares/updateRateLimiter.middleware")
 
 
 // Sign Up account
@@ -24,7 +25,7 @@ router.get("/me", authentication, User.myProfile)
 
 
 // Update My profile 
-router.patch("/update/", authentication, User.updateProfile)
+router.patch("/update/", [authentication, updateRateLimiter], User.updateProfile)
 
 // Delete user 
 router.delete("/delete", authentication, User.deleteAccount)

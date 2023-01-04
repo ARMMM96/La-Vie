@@ -57,8 +57,10 @@ ________________
 		> Method Implemented
 		✓- Edit my profile action
 
+		
 		> Route added
-		- Delete account action
+		> Method Implemented
+		✓- Delete account action
 	________________________________________________________________________________________________________________
 
 	user must be loggedin to be a partner 

@@ -59,10 +59,8 @@ const userSchema = Schema({
     },
     addresses: [
         {
-            address: {
-                addrType: { type: String, required: true },
-                addrDetails: { type: String }
-            }
+            addrType: { type: String, required: true },
+            addrDetails: { type: String }
         }
     ],
     bookMarks: [
