@@ -1,6 +1,5 @@
 const router = require("express").Router()
 const Rolse = require("../app/controllers/roles.controller")
-const Roles = require("../database/models/roles.model")
 
 
 
