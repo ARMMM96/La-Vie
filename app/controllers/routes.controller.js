@@ -16,7 +16,7 @@ class Routes {
 
     static update = async (req, res) => {
         try {
-            const routesData = await routesModel.findOneAndUpdate({ _id: req.body.id }, { roleTitle: req.body.roleTitle }, { new: true })
+            const routesData = await routesModel.findOneAndUpdate({ _id: req.body.id }, req.body, { new: true })
             if (!routesData) {
                 resHelper.resHandler(res, 404, false, null, "Route Is not exist")
             } else {
