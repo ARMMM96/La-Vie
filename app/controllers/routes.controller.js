@@ -18,9 +18,24 @@ class Routes {
         try {
             const routesData = await routesModel.findOneAndUpdate({ _id: req.body.id }, { roleTitle: req.body.roleTitle }, { new: true })
             if (!routesData) {
-                resHelper.resHandler(res, 404, false, null, "Rule Is not exist")
+                resHelper.resHandler(res, 404, false, null, "Route Is not exist")
             } else {
                 resHelper.resHandler(res, 200, true, routesData, "Route Updated successfully")
+            }
+
+        }
+        catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+
+    static delete = async (req, res) => {
+        try {
+            const routesData = await routesModel.findOneAndDelete({ _id: req.body.id })
+            if (!routesData) {
+                resHelper.resHandler(res, 404, false, null, "Route Is not exist")
+            } else {
+                resHelper.resHandler(res, 200, true, routesData, "Route Deleted successfully")
             }
 
         }

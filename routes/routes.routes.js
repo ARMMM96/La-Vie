@@ -15,9 +15,7 @@ router.get("/all", (req, res) => {
     res.send("get all")
 })
 
-router.delete("/delete", (req, res) => {
-    res.send("delete")
-})
+router.delete("/delete", Routes.delete)
 
 
 module.exports = router
