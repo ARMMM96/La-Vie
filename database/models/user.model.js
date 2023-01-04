@@ -75,7 +75,13 @@ const userSchema = Schema({
     },
     tokens: [{
         token: { type: String, required: true }
-    }]
+    }],
+    role: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Roles",
+        default: "63b5fb423a9742d3119d429d",
+    }
+
 })
 
 
