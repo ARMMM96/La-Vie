@@ -48,7 +48,7 @@ class Rolse {
             if (!rolesData) {
                 resHelper.resHandler(res, 404, false, null, "Rule Is not exist")
             } else {
-                resHelper.resHandler(res, 200, true, rolesData, "Rule Deleted successfully")
+                resHelper.resHandler(res, 200, true, rolesData, "Rule successfully found")
             }
 
         }
@@ -62,7 +62,7 @@ class Rolse {
             if (!rolesData) {
                 resHelper.resHandler(res, 404, false, null, "No Rules created Yet")
             } else {
-                resHelper.resHandler(res, 200, true, rolesData, "Rule Deleted successfully")
+                resHelper.resHandler(res, 200, true, rolesData, "Rule successfully found")
             }
 
         }

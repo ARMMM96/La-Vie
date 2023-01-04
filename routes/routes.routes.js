@@ -9,9 +9,7 @@ router.patch("/update", Routes.update)
 
 router.get("/get", Routes.singleRoute)
 
-router.get("/all", (req, res) => {
-    res.send("get all")
-})
+router.get("/all", Routes.getRoutes)
 
 router.delete("/delete", Routes.delete)
 

@@ -51,7 +51,22 @@ class Routes {
             if (!routesData) {
                 resHelper.resHandler(res, 404, false, null, "Route Is not exist")
             } else {
-                resHelper.resHandler(res, 200, true, routesData, "Route Deleted successfully")
+                resHelper.resHandler(res, 200, true, routesData, "Route found successfully")
+            }
+
+        }
+        catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+
+    static getRoutes = async (req, res) => {
+        try {
+            const routesData = await routesModel.find()
+            if (!routesData) {
+                resHelper.resHandler(res, 404, false, null, "No Routes created Yet")
+            } else {
+                resHelper.resHandler(res, 200, true, routesData, "Routes successfully found")
             }
 
         }
