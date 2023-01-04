@@ -1,6 +1,7 @@
 const router = require("express").Router()
-
 const User = require("../app/controllers/user.contoller")
+const { authentication } = require("../app/middlewares/authentication.middleware")
+
 
 // Sign Up account
 router.post("/signup", User.signUp)
@@ -9,7 +10,7 @@ router.post("/signup", User.signUp)
 router.post("/login", User.login)
 
 // Logout
-router.post("/logout", (req, res) => {
+router.post("/logout", authentication, (req, res) => {
     res.send("Logout Route")
 })
 
@@ -19,7 +20,7 @@ router.post("/resetPassword", (req, res) => {
 })
 
 // My Profile 
-router.get("/single/:id", (req, res) => {
+router.get("/single/:id", authentication, (req, res) => {
     res.send("My profile Route")
 })
 

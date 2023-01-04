@@ -100,7 +100,6 @@ userSchema.statics.loginUser = async (email, password) => {
 
 userSchema.methods.generateToken = async function () {
     const userData = this
-    console.log("test ", process.env.tokenPass)
     const token = jwt.sign({ _id: userData._id }, process.env.tokenPassword)
     userData.tokens = userData.tokens.concat({ token })
     await userData.save()

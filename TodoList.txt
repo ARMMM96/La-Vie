@@ -34,9 +34,11 @@ ________________
 	// Actions on User Model 
 		> Route added
 		> Method Implemented
-		- Sign up (Create account) throw regular form or any third party such as (google - facebook)
+		✓- Sign up (Create account) throw regular form 
+		- Sign up (Create account) throw or any third party such as (google - facebook)	
 		> Route added
-		- Login (Read data and validate and create token)
+		> Methods Implemented
+		✓- Login (Read data and validate and create token)
 		> Route added
 		- Forgot password (Will send verfication code to his email to allow him to update the password)
 		> Route added
@@ -209,6 +211,6 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________
 
 
-	- Implementing authentication middleware
+	- Implementing authentication middleware		✓  DONE 
 
 	- Implementing authorization middleware
