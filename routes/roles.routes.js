@@ -1,10 +1,9 @@
 const router = require("express").Router()
+const Rules = require("../app/controllers/roles.controller")
 
 
 
-router.post("/create", (req, res) => {
-    res.send("rule created")
-})
+router.post("/create", Rules.create)
 router.patch("/updte", (req, res) => {
     res.send("rule updated")
 
