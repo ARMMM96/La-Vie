@@ -40,11 +40,8 @@ class User {
 
     static myProfile = async (req, res) => {
         try {
-            res.status(200).send({
-                apiStatus: true,
-                data: req.user,
-                message: "data fetched"
-            })
+            resHelper.resHandler(res, 200, true, req.user, "user successfully found")
+
         }
         catch (e) {
             resHelper.resHandler(res, 500, false, e, e.message)
@@ -66,7 +63,7 @@ class User {
 
     static deleteAccount = async (req, res) => {
         try {
-            const deletedUser = new deltedUsers({ deletedUser: req.user})
+            const deletedUser = new deltedUsers({ deletedUser: req.user })
             await deletedUser.save()
             const user = await userModel.findByIdAndRemove(req.user._id)
             resHelper.resHandler(res, 200, true, user, "Deleted")
