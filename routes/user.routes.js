@@ -24,12 +24,10 @@ router.get("/me", authentication, User.myProfile)
 
 
 // Update My profile 
-router.patch("/update/",authentication, User.updateProfile)
+router.patch("/update/", authentication, User.updateProfile)
 
 // Delete user 
-router.delete("/delete/:id", (req, res) => {
-    res.send("Delete My profile Route")
-})
+router.delete("/delete", authentication, User.deleteAccount)
 
 
 module.exports = router

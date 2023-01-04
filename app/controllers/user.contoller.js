@@ -1,5 +1,6 @@
 
 const userModel = require("../../database/models/user.model")
+const deltedUsers = require("../../database/models/deletedUsers.model")
 const resHelper = require("../helpers/resHelper")
 
 class User {
@@ -60,6 +61,18 @@ class User {
             resHelper.resHandler(res, 500, false, e, e.message)
         }
 
+    }
+
+    static deleteAccount = async (req, res) => {
+        try {
+            const deletedUser = new deltedUsers({ deletedUser: req.user})
+            await deletedUser.save()
+            const user = await userModel.findByIdAndRemove(req.user._id)
+            resHelper.resHandler(res, 200, true, user, "Deleted")
+        } catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+
+        }
     }
 }
 
