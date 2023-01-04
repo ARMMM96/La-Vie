@@ -7,11 +7,11 @@ const { Schema } = mongoose;
 const userSchema = Schema({
     fristName: {
         type: String,
-        require: true
+        required: true
     },
     lastName: {
         type: String,
-        require: true
+        required: true
     },
     email: {
         type: String,

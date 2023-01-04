@@ -35,18 +35,27 @@ ________________
 		> Route added
 		> Method Implemented
 		✓- Sign up (Create account) throw regular form 
+
 		- Sign up (Create account) throw or any third party such as (google - facebook)	
+
 		> Route added
 		> Methods Implemented
 		✓- Login (Read data and validate and create token)
+
 		> Route added
 		- Forgot password (Will send verfication code to his email to allow him to update the password)
+
+		> Method Implemented
 		> Route added
-		- Logout (will update user data and remove tokens array);
+		✓- Logout (will update user data and remove tokens array);
+
 		> Route added
-		- Get single to get User data to render it into his Personal profile
+		> Method Implemented
+		✓- Get single to get User data to render it into his Personal profile
+
 		> Route added
 		- Edit my profile action
+
 		> Route added
 		- Delete account action
 	________________________________________________________________________________________________________________
