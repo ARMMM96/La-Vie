@@ -2,9 +2,7 @@ const router = require("express").Router()
 const Routes = require("../app/controllers/routes.controller")
 
 
-router.post("/create", (req, res) => {
-    res.send("create")
-})
+router.post("/create", Routes.create)
 
 router.patch("/update", (req, res) => {
     res.send("update")
