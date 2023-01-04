@@ -23,6 +23,19 @@ class User {
             resHelper.resHandler(res, 500, false, e, e.message)
         }
     }
+
+    static logOut = async (req, res) => {
+        try {
+            req.user.tokens = req.user.tokens.filter(
+                t => t.token != req.token
+            )
+            await req.user.save()
+            resHelper.resHandler(res, 200, true, null, "logged out")
+        }
+        catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
 }
 
 

@@ -3,6 +3,7 @@ const User = require("../app/controllers/user.contoller")
 const { authentication } = require("../app/middlewares/authentication.middleware")
 const { loginRateLimiter } = require("../app/middlewares/loginRateLimiter.middleware")
 
+
 // Sign Up account
 router.post("/signup", User.signUp)
 
@@ -10,9 +11,7 @@ router.post("/signup", User.signUp)
 router.post("/login", loginRateLimiter, User.login)
 
 // Logout
-router.post("/logout", authentication, (req, res) => {
-    res.send("Logout Route")
-})
+router.post("/logout", authentication, User.logOut)
 
 // Forgot Password
 router.post("/resetPassword", (req, res) => {
