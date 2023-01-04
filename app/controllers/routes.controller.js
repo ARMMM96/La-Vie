@@ -44,6 +44,23 @@ class Routes {
         }
     }
 
+
+    static singleRoute = async (req, res) => {
+        try {
+            const routesData = await routesModel.findOne({ _id: req.body.id })
+            if (!routesData) {
+                resHelper.resHandler(res, 404, false, null, "Route Is not exist")
+            } else {
+                resHelper.resHandler(res, 200, true, routesData, "Route Deleted successfully")
+            }
+
+        }
+        catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+
+
 }
 
 module.exports = Routes

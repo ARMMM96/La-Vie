@@ -7,9 +7,7 @@ router.post("/create", Routes.create)
 router.patch("/update", Routes.update)
 
 
-router.get("/get", (req, res) => {
-    res.send("get single")
-})
+router.get("/get", Routes.singleRoute)
 
 router.get("/all", (req, res) => {
     res.send("get all")
