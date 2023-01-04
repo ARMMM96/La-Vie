@@ -4,9 +4,7 @@ const Routes = require("../app/controllers/routes.controller")
 
 router.post("/create", Routes.create)
 
-router.patch("/update", (req, res) => {
-    res.send("update")
-})
+router.patch("/update", Routes.update)
 
 
 router.get("/get", (req, res) => {
