@@ -4,10 +4,10 @@ const Rules = require("../app/controllers/roles.controller")
 
 
 router.post("/create", Rules.create)
-router.patch("/updte", (req, res) => {
-    res.send("rule updated")
 
-})
+router.patch("/update", Rules.update)
+
+
 router.get("/get", (req, res) => {
     res.send("rule data")
 })

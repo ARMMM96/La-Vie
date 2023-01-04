@@ -7,7 +7,21 @@ class Rules {
         try {
             const rolesData = new rolesModel(req.body)
             await rolesData.save()
-            resHelper.resHandler(res, 200, true, userData, "Rule added successfully")
+            resHelper.resHandler(res, 200, true, rolesData, "Rule added successfully")
+        }
+        catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+    static update = async (req, res) => {
+        try {
+            const rolesData = await rolesModel.findOneAndUpdate({ _id: req.body.id }, { roleTitle: req.body.roleTitle }, { new: true })
+            if (!rolesData) {
+                resHelper.resHandler(res, 404, false, null, "Rule Is not exist")
+            } else {
+                resHelper.resHandler(res, 200, true, rolesData, "Rule Updated successfully")
+            }
+
         }
         catch (e) {
             resHelper.resHandler(res, 500, false, e, e.message)
