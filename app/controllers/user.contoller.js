@@ -36,6 +36,20 @@ class User {
             resHelper.resHandler(res, 500, false, e, e.message)
         }
     }
+
+    static myProfile = async (req, res) => {
+        try {
+            res.status(200).send({
+                apiStatus: true,
+                data: req.user,
+                message: "data fetched"
+            })
+        }
+        catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+        }
+
+    }
 }
 
 

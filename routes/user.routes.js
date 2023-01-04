@@ -20,9 +20,7 @@ router.post("/resetPassword", (req, res) => {
 })
 
 // My Profile 
-router.get("/single/:id", authentication, (req, res) => {
-    res.send("My profile Route")
-})
+router.get("/me", authentication, User.myProfile)
 
 
 // Update My profile 

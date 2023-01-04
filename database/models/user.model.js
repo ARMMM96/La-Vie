@@ -84,7 +84,7 @@ const userSchema = Schema({
 // Hide user credentials data
 userSchema.methods.toJSON = function () {
     const user = this.toObject()
-    deletedElements = ["__v", "password"]
+    deletedElements = ["__v", "password", "tokens"]
     deletedElements.forEach(element => {
         delete user[element]
     });
