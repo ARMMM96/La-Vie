@@ -60,7 +60,7 @@ const userSchema = Schema({
     addresses: [
         {
             address: {
-                addrType: { type: String, require: true },
+                addrType: { type: String, required: true },
                 addrDetails: { type: String }
             }
         }
