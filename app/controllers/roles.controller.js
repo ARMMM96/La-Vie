@@ -27,6 +27,20 @@ class Rules {
             resHelper.resHandler(res, 500, false, e, e.message)
         }
     }
+    static delete = async (req, res) => {
+        try {
+            const rolesData = await rolesModel.findOneAndDelete({ _id: req.body.id })
+            if (!rolesData) {
+                resHelper.resHandler(res, 404, false, null, "Rule Is not exist")
+            } else {
+                resHelper.resHandler(res, 200, true, rolesData, "Rule Deleted successfully")
+            }
+
+        }
+        catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
 
 
 }

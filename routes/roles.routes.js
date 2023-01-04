@@ -11,9 +11,8 @@ router.patch("/update", Rules.update)
 router.get("/get", (req, res) => {
     res.send("rule data")
 })
-router.delete("/delete", (req, res) => {
-    res.send("rule deleted")
-})
+
+router.delete("/delete", Rules.delete)
 
 
 module.exports = router
