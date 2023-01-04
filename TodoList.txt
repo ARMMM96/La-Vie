@@ -63,7 +63,8 @@ ________________
 		✓- Delete account action
 	________________________________________________________________________________________________________________
 
-	user must be loggedin to be a partner 
+	user must be loggedin to be a partner  
+	admin should aprrofe pratnership request 
 
 	Partner Schema
 		{
@@ -88,7 +89,7 @@ ________________
 	
 ________________________________________________________________________________________________________________
 
-		Qualification Schema
+		Rewards Schema
 		{
 			- Level: [beginner-advanced-professional]
 			- Rewards [
@@ -144,8 +145,14 @@ products review schema {
 
 ________________________________________________________________________________________________________________
 
-app Roles Schema:{type: String, unique, required}
+app Roles Schema:{type: String, unique, required}    ✓  DONE 
 
+
+	// Actions 
+			Create Role
+			updte Role
+			get Role
+			delete Role
 ________________________________________________________________________________________________________________
 
 routes  Schema : { 
@@ -157,10 +164,10 @@ routes  Schema : {
 
 
 	// Actions 
-			Create rule
-			updte rule
-			get rule
-			delete rule
+			Create route
+			updte route
+			get route
+			delete route
 
 
 ________________________________________________________________________________________________________________
