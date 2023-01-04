@@ -81,6 +81,20 @@ const userSchema = Schema({
 })
 
 
+// Hide user credentials data
+userSchema.methods.toJSON = function () {
+    const user = this.toObject()
+    deletedElements = ["__v", "password"]
+    deletedElements.forEach(element => {
+        delete user[element]
+    });
+    return user
+}
+
+
+
+
+
 userSchema.pre("save", async function () {
     if (this.isModified('password')) {
         this.password = await bcryptjs.hash(this.password, 8)
