@@ -54,7 +54,8 @@ ________________
 		✓- Get single to get User data to render it into his Personal profile
 
 		> Route added
-		- Edit my profile action
+		> Method Implemented
+		✓- Edit my profile action
 
 		> Route added
 		- Delete account action
