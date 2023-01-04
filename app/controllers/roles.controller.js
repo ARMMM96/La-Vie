@@ -42,6 +42,20 @@ class Rolse {
         }
     }
 
+    static singleRole = async (req, res) => {
+        try {
+            const rolesData = await rolesModel.findOne({ _id: req.body.id })
+            if (!rolesData) {
+                resHelper.resHandler(res, 404, false, null, "Rule Is not exist")
+            } else {
+                resHelper.resHandler(res, 200, true, rolesData, "Rule Deleted successfully")
+            }
+
+        }
+        catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
 
 
 

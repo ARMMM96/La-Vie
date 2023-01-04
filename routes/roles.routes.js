@@ -8,9 +8,7 @@ router.post("/create", Rolse.create)
 router.patch("/update", Rolse.update)
 
 
-router.get("/get", (req, res) => {
-    res.send("rule data")
-})
+router.get("/get", Rolse.singleRole)
 
 router.get("/all", (req, res) => {
     res.send("All Rules data")
