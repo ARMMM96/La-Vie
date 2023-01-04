@@ -2,10 +2,11 @@ const router = require("express").Router()
 const User = require("../app/controllers/user.contoller")
 const { authentication } = require("../app/middlewares/authentication.middleware")
 const { loginRateLimiter } = require("../app/middlewares/loginRateLimiter.middleware")
+const { signUpRateLimiter } = require("../app/middlewares/singUpRateLimiter.middleware")
 
 
 // Sign Up account
-router.post("/signup", User.signUp)
+router.post("/signup", signUpRateLimiter, User.signUp)
 
 // Login
 router.post("/login", loginRateLimiter, User.login)
