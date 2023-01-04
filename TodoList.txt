@@ -156,12 +156,10 @@ app Roles Schema:{type: String, unique, required}    ✓  DONE
 			delete Role	 ✓  DONE 
 ________________________________________________________________________________________________________________
 
-routes  Schema : { 
-
+routes  Schema : { 														✓  DONE 
 			 - routeName:String, unique, required
 			 - roles: ref: [roels id's]
-			
-			}
+			 }
 
 
 	// Actions 
