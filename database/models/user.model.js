@@ -91,7 +91,11 @@ const userSchema = Schema({
     rewards: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Rewards",
-    }]
+    }],
+    partnerShip: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Rewards",
+    }
 
 })
 
