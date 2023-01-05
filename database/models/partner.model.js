@@ -18,25 +18,26 @@ const partnerSchema = Schema({
         required: true,
         trim: true
     },
+
+    email: {
+        type: String,
+        unique: true,
+        required: true,
+        trim: true
+    },
+    phoneNumber: {
+        type: Number,
+        unique: true,
+        required: true,
+        trim: true
+    },
+    webSite: {
+        type: String,
+        required: true,
+        trim: true
+    },
     storeAddresses: [
         {
-            email: {
-                type: String,
-                unique: true,
-                required: true,
-                trim: true
-            },
-            phoneNumber: {
-                type: Number,
-                unique: true,
-                required: true,
-                trim: true
-            },
-            webSite: {
-                type: String,
-                required: true,
-                trim: true
-            },
             bracnchNumber: {
                 type: Number,
                 unique: true,
@@ -49,18 +50,20 @@ const partnerSchema = Schema({
                 required: true,
                 trim: true
             },
-            contactRole: {
-                type: String,
-                enum: ["Owner", "Co-owner", "Manager", "Employee"],
-                required: true
+            zipCode: {
+                type: Number,
+                unique: true,
+                required: true,
+                trim: true
             }
-
         }
-    ]
+    ],
+    contactRole: {
+        type: String,
+        enum: ["Owner", "Co-owner", "Manager", "Employee"],
+        required: true
+    }
 })
-
-
-
 
 const Partner = mongoose.model("Partner", partnerSchema);
 
