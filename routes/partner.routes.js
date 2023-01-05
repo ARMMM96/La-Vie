@@ -10,9 +10,7 @@ router.patch("/approve", [authentication, authorization], Partnership.approve)
 // Cancel partnership 
 router.patch("/cancel", [authentication, authorization], Partnership.cancel)
 // Get partnership status 
-router.get("/status", [authentication, authorization], (req, res) => {
-    res.send("partnership status ")
-})
+router.get("/status", [authentication, authorization], Partnership.getStatus)
 
 
 

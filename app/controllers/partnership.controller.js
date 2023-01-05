@@ -43,6 +43,24 @@ class Partnership {
             resHelper.resHandler(res, 500, false, e, e.message)
         }
     }
+    static getStatus = async (req, res) => {
+        try {
+            const partnershipData = await partnershipModel.findOne({ _id: req.body.pratnershipId })
+            if (partnershipData) {
+                if (partnershipData.approved) {
+                    resHelper.resHandler(res, 200, true, partnershipData.approved, "Partnership Status is approved")
+                }else{
+                    resHelper.resHandler(res, 200, true, partnershipData.approved, "Partnership Status no approved")
+                }
+            } else {
+
+                resHelper.resHandler(res, 404, true, partnershipData, "Partnership not found")
+            }
+        }
+        catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
 }
 
 module.exports = Partnership
