@@ -15,10 +15,12 @@ const deletedUsersSchema = Schema({
         },
         email: {
             type: String,
+            trim: true,
+            lowercase: true
         },
         password: {
             type: String,
-
+            trim: true,
         },
         dateOfBirth: {
             type: String,
@@ -31,14 +33,11 @@ const deletedUsersSchema = Schema({
         },
         phoneNumber: {
             type: String,
-
         },
         addresses: [
             {
-                address: {
-                    addrType: { type: String },
-                    addrDetails: { type: String }
-                }
+                addrType: { type: String },
+                addrDetails: { type: String }
             }
         ],
         bookMarks: [
@@ -52,8 +51,28 @@ const deletedUsersSchema = Schema({
             trim: true,
         },
         tokens: [{
-            token: { type: String}
-        }]
+            token: { type: String, required: true }
+        }],
+        role: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Roles",
+            default: "63b5fb423a9742d3119d429d",
+        },
+        userLevel: {
+            type: String,
+            trim: true,
+            lowercase: true,
+            enum: ["beginner", "advanced", "professional"],
+            default: "beginner"
+        },
+        rewards: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Rewards",
+        }],
+        partnerShip: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Rewards",
+        }
     }
 })
 
