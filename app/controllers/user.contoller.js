@@ -2,6 +2,8 @@
 const userModel = require("../../database/models/user.model")
 const deltedUsers = require("../../database/models/deletedUsers.model")
 const resHelper = require("../helpers/resHelper")
+const upload = require('../middlewares/imageUpload.middleware')
+const multer = require("multer")
 
 class User {
     static signUp = async (req, res) => {
@@ -72,10 +74,24 @@ class User {
 
         }
     }
+
+    static uploadImage = async (req, res) => {
+        try {
+            const image = upload.single('img')
+            image(req, res, function (err) {
+                if (err instanceof multer.MulterError) {
+                    return res.send({ err: "invalid upload" })
+                } else if (err) {
+                    return res.send({ err: "invalid upload 1", err })
+                }
+                return res.send(req.file)
+            })
+        }
+        catch (err) {
+            res.send(err.message)
+        }
+    }
 }
-
-
-
 
 
 
