@@ -1,11 +1,10 @@
 const router = require("express").Router()
+const Partnership = require('../app/controllers/partnership.controller')
 const { authentication } = require("../app/middlewares/authentication.middleware")
 const { authorization } = require("../app/middlewares/authorization.middleware")
 
 // Requiest partnership 
-router.post("/requiest", [authentication, authorization], (req, res) => {
-    res.send("requested")
-})
+router.post("/requiest", [authentication, authorization], Partnership.requiest)
 // Approve partnership 
 router.patch("/approve", [authentication, authorization], (req, res) => {
     res.send("partnership approved")
