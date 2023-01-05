@@ -49,12 +49,27 @@ class Partnership {
             if (partnershipData) {
                 if (partnershipData.approved) {
                     resHelper.resHandler(res, 200, true, partnershipData.approved, "Partnership Status is approved")
-                }else{
+                } else {
                     resHelper.resHandler(res, 200, true, partnershipData.approved, "Partnership Status no approved")
                 }
             } else {
 
                 resHelper.resHandler(res, 404, true, partnershipData, "Partnership not found")
+            }
+        }
+        catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+    static update = async (req, res) => {
+        try {
+            // Preventing Unauthorized approvement
+            req.body.approved = false;
+            const partnershipData = await partnershipModel.findOneAndUpdate({ _id: req.body.pratnershipId }, req.body, { new: true })
+            if (!partnershipData) {
+                resHelper.resHandler(res, 404, true, partnershipData, "Not found")
+            } else {
+                resHelper.resHandler(res, 200, true, partnershipData, "Data updated pending for approval")
             }
         }
         catch (e) {
