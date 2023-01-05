@@ -1,0 +1,740 @@
+{
+	"info": {
+		"_postman_id": "cb3f8631-0401-4643-8756-0f0550cdc363",
+		"name": "La-Vie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25190509"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"mohasen\",\r\n    \"lastName\": \"housiaen\",\r\n    \"email\": \"hasan1@gmail.com\",\r\n    \"password\": \"Aaa123@123A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hasan1@gmail.com\",\r\n    \"password\": \"Aaa123@123A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log out",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I0NGNlMmE0OWIxZWUwZDVlNTUyOGMiLCJpYXQiOjE2NzI3NjMxMzV9.v0fpd_nWl45PWqceBWW0f19bhWg7mT_jwGNQ49ouP-Y",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/user/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user/resetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update account",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I1OTdiYzlkMTM4OWI3M2NlZmEwNTYiLCJpYXQiOjE2NzI4NDU1MjN9.SFnBqCw_nYhsUGb9D0rHE7ZvgH6sWRNcom0kArX9MgE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"methat\",\r\n    \"lastName\": \"housiaen \",\r\n    \"email\": \"hasan1@gmail.com\",\r\n    \"addresses\": [\r\n        {\r\n            \"addrType\":\"home\",\r\n            \"addrDetails\": \"cairo, helwan \"\r\n        },   \r\n        {\r\n            \"addrType\":\"work1\",\r\n            \"addrDetails\": \"cairo, tahrear \"\r\n        }   \r\n    ],\r\n    \"bookMarks\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete account",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I1ODY3NzExZjQ3ZmZhYzMxZDg0MTciLCJpYXQiOjE2NzI4NDA4MzZ9.euQ2AVV7lBeUgUKYDqWgPJVrNdSKPUpbsN5S0gIwAYc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get my profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I0NGNlMmE0OWIxZWUwZDVlNTUyOGMiLCJpYXQiOjE2NzI3NjMxMzZ9.vELmHYixiGbRkPnHW_zOYYxePPDaj9sZv5Wo7-5v2Jw",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile Picture  Upload ",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I1ZmMwMmU3MDA2N2RkMjY4ZjBmNjEiLCJpYXQiOjE2NzI4NzE1MzF9.XHKOWWKJwRCD3sOXo0VPfOA4hNNCqsGdXybrz06rnwg",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": "/C:/Users/AHMED/Desktop/321872959_898267251189448_4410913916713370181_n.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/profilePicture",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"profilePicture"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Create Role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleTitle\":\"AHMED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/roles/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"roles",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"63b5ad2d9cf24573bf19a665\",\r\n    \"roleTitle\": \"Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/roles/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"roles",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Role",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"63b5aef8c97652ebf10fcdbc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/roles/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"roles",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Role",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"63b5a8c8cb0202861df487e0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/roles/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"roles",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/roles/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"roles",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Routes",
+			"item": [
+				{
+					"name": "Create url ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"/api/partnership/update\",\r\n    \"roles\": [\r\n        {\r\n            \"_id\": \"63b5a8c8cb0202861df487e0\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/routes/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"routes",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Routes",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"63b64982e38a510f944adf8c\",\r\n    \"url\": \"/api/partnership/approve\",\r\n    \"roles\": [\r\n        {\r\n            \"_id\": \"63b5ec334bccecb8012f90c7\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/routes/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"routes",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Route",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"63b5d5d71e80cbca63ba70a5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/routes/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"routes",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Routes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/routes/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"routes",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Route",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"63b5d3b95180844b0ffc36a1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/routes/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"routes",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Partnership",
+			"item": [
+				{
+					"name": "Request Partnership",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I2MmMxZmJjNGIwODU3NDliYjIwYjMiLCJpYXQiOjE2NzI4ODMyNzV9.RK3QvwABpXObNc-skSwM4WwTDVaH6cLydx_w9w7tjls",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"storeName\": \"Welcome beeok\",\r\n    \"numberOfBranches\": 1,\r\n    \"email\": \"store@gmail.com\",\r\n    \"phoneNumber\": \"0123456789\",\r\n    \"webSite\": \"www.store.com\",\r\n    \"storeAddresses\": [\r\n        {\r\n            \"bracnchNumber\": 1,\r\n            \"branchLocation\": \"wra msna3 elkrasy\",\r\n            \"zipCode\": \"01234\"\r\n        }\r\n    ],\r\n    \"contactRole\": \"Owner\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/partnership/requiest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"partnership",
+								"requiest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Approve partnership",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I2OTQzMmZlZWNhNWZiZjI3NzVhOTkiLCJpYXQiOjE2NzI5MDk5MDF9.LmOUdXl-QWz4RS3hufemse9vr64o1ASCJij4WTxb8Qc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"63b64604c3cb9597679ede8e\",\r\n    \"pratnershipRequest\": \"63b64692285fa5a94c28e030\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/partnership/approve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"partnership",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel partnership ",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I2OTQzMmZlZWNhNWZiZjI3NzVhOTkiLCJpYXQiOjE2NzI5MDk5MDF9.LmOUdXl-QWz4RS3hufemse9vr64o1ASCJij4WTxb8Qc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"63b64604c3cb9597679ede8e\",\r\n    \"pratnershipRequest\": \"63b64692285fa5a94c28e030\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/partnership/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"partnership",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partnership status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I2OTQzMmZlZWNhNWZiZjI3NzVhOTkiLCJpYXQiOjE2NzI5MDk5MDF9.LmOUdXl-QWz4RS3hufemse9vr64o1ASCJij4WTxb8Qc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pratnershipId\":\"63b64692285fa5a94c28e030\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/partnership/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"partnership",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update partnership ",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I2OTQzMmZlZWNhNWZiZjI3NzVhOTkiLCJpYXQiOjE2NzI5MDk5MDF9.LmOUdXl-QWz4RS3hufemse9vr64o1ASCJij4WTxb8Qc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pratnershipId\": \"63b64692285fa5a94c28e031\",\r\n    \"approved\": true,\r\n    \"storeName\": \"Welcome beeok\",\r\n    \"numberOfBranches\": 1,\r\n    \"email\": \"store1@gmail.com\",\r\n    \"phoneNumber\": \"0123456789\",\r\n    \"webSite\": \"www.store.com\",\r\n    \"storeAddresses\": [\r\n        {\r\n            \"bracnchNumber\": 1,\r\n            \"branchLocation\": \"wra msna3 elkrasy\",\r\n            \"zipCode\": \"01234\"\r\n        }\r\n    ],\r\n    \"contactRole\": \"Owner\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/partnership/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"partnership",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
