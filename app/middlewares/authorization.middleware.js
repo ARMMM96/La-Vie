@@ -12,7 +12,7 @@ const authorization = async (req, res, next) => {
             const findRule = routes.roles.find(role => {
                 return role.toString() == req.user.role.toString()
             })
-            if (findRule.toString()) {
+            if (findRule) {
                 next()
             } else {
                 resHelper.resHandler(res, 401, false, null, "Unauthorized request")
