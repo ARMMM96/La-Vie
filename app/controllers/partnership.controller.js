@@ -26,7 +26,6 @@ class Partnership {
             const getPartnerRuleId = await rolesModel.findOne({ roleTitle: "partner" });
             const updateUserRole = await userModel.findByIdAndUpdate({ _id: req.body.userId }, { role: getPartnerRuleId._id }, { new: true })
             const partnershipData = await partnershipModel.findOneAndUpdate({ _id: req.body.pratnershipRequest }, { approved: true }, { new: true })
-            console.log(updateUserRole)
             resHelper.resHandler(res, 200, true, partnershipData, "Partnership approved successfully")
         }
         catch (e) {
@@ -35,7 +34,9 @@ class Partnership {
     }
     static cancel = async (req, res) => {
         try {
-            const partnershipData = await partnershipModel.findOneAndUpdate({ _id: req.body.id }, { approved: false }, { new: true })
+            const getCustomerRuleId = await rolesModel.findOne({ roleTitle: "customer" });
+            const updateUserRole = await userModel.findByIdAndUpdate({ _id: req.body.userId }, { role: getCustomerRuleId._id }, { new: true })
+            const partnershipData = await partnershipModel.findOneAndUpdate({ _id: req.body.pratnershipRequest }, { approved: false }, { new: true })
             resHelper.resHandler(res, 200, true, partnershipData, "Partnership canceled successfully")
         }
         catch (e) {
