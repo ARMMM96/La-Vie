@@ -25,6 +25,15 @@ class Partnership {
             resHelper.resHandler(res, 500, false, e, e.message)
         }
     }
+    static cancel = async (req, res) => {
+        try {
+            const partnershipData = await partnershipModel.findOneAndUpdate({ _id: req.body.id }, { approved: false }, { new: true })
+            resHelper.resHandler(res, 200, true, partnershipData, "Partnership canceled successfully")
+        }
+        catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
 }
 
 module.exports = Partnership
