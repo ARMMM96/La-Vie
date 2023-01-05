@@ -28,6 +28,9 @@ router.get("/me", [authentication, authorization], User.myProfile)
 // Update My profile 
 router.patch("/update/", [authentication, authorization, updateRateLimiter], User.updateProfile)
 
+// Image Upload
+router.patch("/profilePicture", [authentication, authorization, updateRateLimiter], User.uploadImage)
+
 // Delete user 
 router.delete("/delete", [authentication, authorization], User.deleteAccount)
 
