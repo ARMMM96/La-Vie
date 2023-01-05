@@ -3,8 +3,15 @@ const { Schema } = mongoose;
 const rewardsSchema = Schema({
     rewards: [
         {
-            rewardName: { type: String },
-            rewardScore: { type: Number },
+            rewardName: {
+                type: String,
+                required: true,
+                trim: true
+            },
+            rewardScore: {
+                type: Number,
+                required: true,
+            },
         }
     ],
     totlRewards: { type: Number }
