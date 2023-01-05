@@ -11,7 +11,7 @@ La Vie Todo List
 
 ________________
 
-	// User data
+	// User data				
 	- Users Schema: {
 
 				✓- First Name (required)										
@@ -67,13 +67,12 @@ ________________
 	user must be loggedin to be a partner  
 	admin should aprrofe pratnership request 
 
-	Partner Schema
+	Partner Schema								✓  DONE 
 		{
 			approved: bolean defult :false
 			Store name: string required
 			No. of Branches: number required
-			Store type: []
-			Restaurant Address
+			Store Address
 			Email address:
 			Mobile number:
 			Website:
