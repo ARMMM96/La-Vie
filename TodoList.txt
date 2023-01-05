@@ -21,11 +21,12 @@ ________________
 				✓- Phone number 
 				✓- Date of birth
 				✓- Gender
-				- Profile picture
+				✓- Profile picture
 				✓- Addresses
 				- Qualification: ref: "myQualification",
-				- role:  ref: "appRoles", [admin , user, partner]
+				✓- role:  ref: "appRoles", [admin , user, partner]
 				✓- Book marks [Urls....]
+				✓- Level: [beginner-advanced-professional]
 		}
 
 
@@ -68,6 +69,7 @@ ________________
 
 	Partner Schema
 		{
+			approved: bolean defult :false
 			Store name: string required
 			No. of Branches: number required
 			Store type: []
@@ -89,9 +91,9 @@ ________________
 	
 ________________________________________________________________________________________________________________
 
-		Rewards Schema
+		Rewards Schema 								✓  DONE 
 		{
-			- Level: [beginner-advanced-professional]
+		
 			- Rewards [
 						{
 							rewordName: String

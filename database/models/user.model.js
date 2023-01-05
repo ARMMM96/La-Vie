@@ -80,7 +80,18 @@ const userSchema = Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Roles",
         default: "63b5fb423a9742d3119d429d",
-    }
+    },
+    userLevel: {
+        type: String,
+        trim: true,
+        lowercase: true,
+        enum: ["beginner", "advanced", "professional"],
+        default: "beginner"
+    },
+    rewards: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Rewards",
+    }]
 
 })
 
