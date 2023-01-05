@@ -1,7 +1,7 @@
 
 const partnershipModel = require("../../database/models/partner.model")
-const { findOneAndDelete, findOneAndUpdate } = require("../../database/models/user.model")
 const userModel = require("../../database/models/user.model")
+const rolesModel = require("../../database/models/roles.model")
 const resHelper = require("../helpers/resHelper")
 
 class Partnership {
@@ -9,8 +9,13 @@ class Partnership {
         try {
             const partnershipData = new partnershipModel(req.body)
             await partnershipData.save()
-            const linkPartnership = await userModel.findByIdAndUpdate({ _id: req.user._id }, { partnerShip: partnershipData._id }, { new: true })
-            resHelper.resHandler(res, 200, true, partnershipData, "Partnership request sent successfully")
+            try {
+                const linkPartnership = await userModel.findByIdAndUpdate({ _id: req.user._id }, { partnerShip: partnershipData._id }, { new: true })
+                resHelper.resHandler(res, 200, true, partnershipData, "Partnership request sent successfully")
+            } catch (e) {
+                resHelper.resHandler(res, 500, false, e, e.message)
+            }
+
         }
         catch (e) {
             resHelper.resHandler(res, 500, false, e, e.message)
@@ -18,7 +23,10 @@ class Partnership {
     }
     static approve = async (req, res) => {
         try {
-            const partnershipData = await partnershipModel.findOneAndUpdate({ _id: req.body.id }, { approved: true }, { new: true })
+            const getPartnerRuleId = await rolesModel.findOne({ roleTitle: "partner" });
+            const updateUserRole = await userModel.findByIdAndUpdate({ _id: req.body.userId }, { role: getPartnerRuleId._id }, { new: true })
+            const partnershipData = await partnershipModel.findOneAndUpdate({ _id: req.body.pratnershipRequest }, { approved: true }, { new: true })
+            console.log(updateUserRole)
             resHelper.resHandler(res, 200, true, partnershipData, "Partnership approved successfully")
         }
         catch (e) {
